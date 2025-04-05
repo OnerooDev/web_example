@@ -13,6 +13,15 @@ export const database_data: DataBaseProps = {
     passwors: 'database_password'
 }
 
+______________________________
+* If need to change standart Host name for Postgres Server
+
+/back/src/typeormConfig.ts
+
+Add variable to (export const typeormConfig)
+( host: 'hostname', )
+______________________________
+
 2. Start Back-end service
 - run new terminal window
 - open directory /back
