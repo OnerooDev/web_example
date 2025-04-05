@@ -106,6 +106,7 @@ export class AppealsResolver {
   ): Promise<AppealResponse> {
       const appeal = await Appeals.findOneBy({id: id});
       if (!appeal) return {error: 'Обращение не найдено'}
+      if (appeal.state >= 3) return {error: 'Обращение уже обработано'}
       await Appeals.update({id: id}, {state: 3, answer: message});
 
     return {appeal}
@@ -120,6 +121,7 @@ export class AppealsResolver {
   ): Promise<AppealResponse> {
       const appeal = await Appeals.findOneBy({id: id});
       if (!appeal) return {error: 'Обращение не найдено'}
+      if (appeal.state >= 3) return {error: 'Обращение уже обработано'}
       await Appeals.update({id: id}, {state: 4, answer: message});
 
     return {appeal}
@@ -133,7 +135,7 @@ export class AppealsResolver {
       const appeals = await Appeals.find({where: {state: 2}});
       if (!appeals) return {error: 'Активных обращение не найдено'}
       appeals.map(async (appeal) => {
-        await Appeals.update({id: appeal.id}, {state: 4});
+        await Appeals.update({id: appeal.id}, {state: 4, answer: 'Массовая отмена'});
       })
 
     return {appeals}
