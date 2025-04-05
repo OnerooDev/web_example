@@ -1,0 +1,8 @@
+mutation CreateAppeal ($title: String!, $message: String!) {
+  createAppeal (
+    title: $title
+    message: $message
+  ) {
+    ...RegularAppealResponse
+  }
+}

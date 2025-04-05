@@ -1,0 +1,9 @@
+query LoadAppeals ($status: Int, $start_date: String, $end_date: String) {
+  showAppeals(
+    status: $status
+    start_date: $start_date
+    end_date: $end_date
+  ) {
+    ...RegularAppealsResponse
+  }
+}

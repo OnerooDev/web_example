@@ -1,0 +1,6 @@
+fragment RegularAppealResponse on AppealResponse {
+  error
+  appeal {
+    ...RegularAppeal
+  }
+}

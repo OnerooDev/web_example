@@ -1,0 +1,8 @@
+mutation ToCancelAppeal ($id: Float!, $message: String!) {
+  updateToCancelAppeal (
+    id: $id
+    message: $message
+  ) {
+    ...RegularAppealResponse
+  }
+}

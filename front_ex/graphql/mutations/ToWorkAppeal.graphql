@@ -1,0 +1,7 @@
+mutation ToWorkAppeal ($id: Float!) {
+  updateToWorkAppeal (
+    id: $id
+  ) {
+    ...RegularAppealResponse
+  }
+}

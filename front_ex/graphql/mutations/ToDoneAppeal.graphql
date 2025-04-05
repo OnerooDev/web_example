@@ -1,0 +1,8 @@
+mutation ToDoneAppeal ($id: Float!, $message: String!) {
+  updateToDoneAppeal (
+    id: $id
+    message: $message
+  ) {
+    ...RegularAppealResponse
+  }
+}

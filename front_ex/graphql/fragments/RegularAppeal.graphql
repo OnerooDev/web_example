@@ -1,0 +1,8 @@
+fragment RegularAppeal on Appeals {
+  id
+  createdAt
+  state
+  title
+  request
+  answer
+}

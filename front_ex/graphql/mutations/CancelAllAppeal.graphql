@@ -1,0 +1,5 @@
+mutation CancelAllAppeal {
+  updateAllToCancelAppeal {
+    ...RegularAppealsResponse
+  }
+}

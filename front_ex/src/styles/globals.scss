@@ -1,0 +1,15 @@
+@use "elements/main";
+
+html {
+  background-color: #fff;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "front_ex",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "gen": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-urql": "^4.0.0",
+    "@urql/exchange-graphcache": "^7.2.3",
+    "graphql": "^16.10.0",
+    "include-media": "^2.0.0",
+    "next": "15.2.4",
+    "next-urql": "^5.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.86.3",
+    "urql": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
