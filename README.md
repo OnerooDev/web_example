@@ -7,12 +7,13 @@ Instructions to start project
 
 /back/src/contacts.ts
 
+```bash
 export const database_data: DataBaseProps = {
     database: "database_name",
     username: 'database_username',
     passwors: 'database_password'
 }
-
+```
 ______________________________
 * If need to change standart Host name for Postgres Server
 
@@ -25,15 +26,27 @@ ______________________________
 2. Start Back-end service
 - run new terminal window
 - open directory /back
-- run command "yarn" or "npm"
-- run command "yarn dev"
+- run command 
+```bash
+"yarn" or "npm"
+```
+- run command 
+```bash
+"yarn dev"
+```
 - back-end started on "http://localhost:4000/graphql"
 
 3. Start Front-end service if needed (or make POST requests to back-end server manualy)
 - run new terminal window
 - open directory /front_ex
-- run "yarn" or "npm"
-- run command "yarn dev"
+- run command 
+```bash
+"yarn" or "npm"
+```
+- run command 
+```bash
+"yarn dev"
+```
 - front-end started on "http://localhost:3000"
 
 --------------------------------
@@ -46,7 +59,7 @@ Appeal statuses:
 4 - "Canceled"
 
 1. Query to recieve Appeals. Variables: {status: (1, 2, 3, 4, null), start_date: 'year-month-day', end_date: 'year-month-day'}
-
+```bash
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
@@ -58,10 +71,10 @@ curl -X POST \
     }
   }' \
   http://localhost:4000/graphql
-
+```
 
 2. Mutation to create new appeal. Variables: {title: 'string', message: 'string'}
-
+```bash
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
@@ -72,9 +85,9 @@ curl -X POST \
     }
   }' \
   http://localhost:4000/graphql
-
+```
 3. Mutation to change appeal status - "In work". Variables: {id: uniq_appeal_number}
-
+```bash
   curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
@@ -84,9 +97,9 @@ curl -X POST \
     }
   }' \
   http://localhost:4000/graphql
-
+```
 4. Mutation to change appeal status - "Completed". Variables: {id: uniq_appeal_number, message: "operator_answer_string"}
-
+```bash
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
@@ -97,9 +110,9 @@ curl -X POST \
     }
   }' \
   http://localhost:4000/graphql
-
+```
 5. Mutation to change appeal status - "Canceled". Variables: {id: uniq_appeal_number, message: "operator_answer_string"}
-
+```bash
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
@@ -110,12 +123,13 @@ curl -X POST \
     }
   }' \
   http://localhost:4000/graphql
-
+```
 6. Mutation to change all appeal "In work" status to "Canceled". Variables: null
-
+```bash
   curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation CancelAllInProgress { updateAllToCancelAppeal { appeals { id state } error } }"
   }' \
   http://localhost:4000/graphql
+```
